@@ -19,11 +19,11 @@ If you don't have any code yet you can create a new one (If you already have cre
 ```
 docker-compose build web
 ```
-- Start your database
+- Start database
 ```
 docker-compose up -d db
 ```
-- Create a project
+- Create project
 ```
 docker run -v `pwd`/web:/code --rm mycms_web wagtail start mysite
 ```
@@ -31,7 +31,7 @@ docker run -v `pwd`/web:/code --rm mycms_web wagtail start mysite
 ```
 ls web/
 ```
-- Change the database settings in `web/mysite/mysite/settings/base.py`
+- Change database settings in `web/mysite/mysite/settings/base.py`
 ```
 From:
 
@@ -54,7 +54,7 @@ DATABASES = {
     }
 }
 ```
-- Initialize the data
+- Initialize data
 ```
 docker-compose run web python manage.py migrate
 ```
@@ -68,11 +68,11 @@ Password (again):
 Superuser created successfully.
 ```
 
-### Run
+## Run
 
-To run the docker stack in background execute:
+To run docker stack in background execute:
 ```
 docker-compose up -d
 ```
 
-Access the admin URL: http://[your-hostname]:8002/admin/login/?next=/admin/
+Access admin URL: http://[your-hostname]:8001/admin/login/?next=/admin/
